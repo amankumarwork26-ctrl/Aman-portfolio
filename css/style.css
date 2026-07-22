@@ -1039,6 +1039,12 @@ body:not(:hover) .cursor, body:not(:hover) .cursor-trail { opacity: 0; }
   fill: currentColor;
 }
 .skill-logo svg { width: 20px; height: 20px; }
+.skill-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
 .cat-icon svg { width: 24px; height: 24px; }
 .cert-icon svg { width: 28px; height: 28px; }
 .qi-icon svg { width: 18px; height: 18px; }
