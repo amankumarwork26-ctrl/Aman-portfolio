@@ -4,35 +4,34 @@
    Theme: Ultra Dark + Neon Glass
    Fonts: Syne (headings) + Space Mono (mono)
    ============================================
-   Table of Contents:
-   1.  CSS Variables        — Theme colors, fonts, spacing
-   2.  Base Reset           — Box-sizing, selection, scrollbar
-   3.  Custom Cursor        — Glowing dot + trail (desktop only)
-   4.  Container            — Max-width wrapper
-   5.  Navigation           — Fixed navbar, logo, links, CTA
-   6.  Mobile Nav           — Hamburger menu (max-width: 900px)
-   7.  Section Basics       — Shared section/tag/title styles
-   8.  Buttons              — Primary, outline, ghost variants
-   9.  Hero Section         — Full-screen hero with particles
-   10. About Section        — Avatar, quick info, strengths
-   11. Skills Section       — Skill cards with bars and tags
-   12. Journey/Timeline     — Education/experience timeline
-   13. Projects Section     — Project cards with hover overlay
-   14. Certifications       — Certificate cards grid
-   15. Contact Section      — Contact form + info links
-   16. Footer               — Site footer with nav
-   17. WhatsApp Button      — Fixed floating WhatsApp link
-   18. SVG Icon Base        — Shared icon sizing
-   19. Unique Design        — Decorative accent elements
-   20. Reveal Animation     — Scroll-triggered fade-in
-   21. Responsive — Laptop   (769px – 1024px)
-   22. Responsive — Tablet   (481px – 768px)
-   23. Responsive — Mobile L (376px – 480px)
-   24. Responsive — Mobile S (max-width: 375px)
-   25. Touch Devices        — Disable hover effects
-   26. Landscape Mobile     — Orientation-specific
-   27. Large Screens        — 1400px+
-   28. Page Transition      — Fade overlay between pages
+    Table of Contents:
+    1.  CSS Variables        — Theme colors, fonts, spacing
+    2.  Base Reset           — Box-sizing, selection, scrollbar
+    3.  Custom Cursor        — Glowing dot + trail (desktop only)
+    4.  Container            — Max-width wrapper
+    5.  Navigation           — Fixed navbar, logo, links, CTA
+    6.  Mobile Nav           — Hamburger menu (max-width: 900px)
+    7.  Section Basics       — Shared section/tag/title styles
+    8.  Buttons              — Primary, outline, ghost variants
+    9.  Hero Section         — Full-screen hero with particles
+    10. About Section        — Avatar, quick info, strengths
+    11. Skills Section       — Skill cards with bars and tags
+    12. Projects Section     — Project cards with hover overlay
+    13. Certifications       — Certificate cards grid
+    14. Contact Section      — Contact form + info links
+    15. Footer               — Site footer with nav
+    16. WhatsApp Button      — Fixed floating WhatsApp link
+    17. SVG Icon Base        — Shared icon sizing
+    18. Unique Design        — Decorative accent elements
+    19. Reveal Animation     — Scroll-triggered fade-in
+    20. Responsive — Laptop   (769px – 1024px)
+    21. Responsive — Tablet   (481px – 768px)
+    22. Responsive — Mobile L (376px – 480px)
+    23. Responsive — Mobile S (max-width: 375px)
+    24. Touch Devices        — Disable hover effects
+    25. Landscape Mobile     — Orientation-specific
+    26. Large Screens        — 1400px+
+    27. Page Transition      — Fade overlay between pages
    ============================================ */
 
 /* ===== 1. CSS VARIABLES — Theme Configuration ===== */
@@ -41,7 +40,6 @@
   --bg: #06060b;
   --bg2: #0c0c14;
   --bg3: #11111c;
-  --bg4: #181825;
 
   /* Surface & border transparency */
   --surface: rgba(255,255,255,0.03);
@@ -62,12 +60,12 @@
 
   /* Gradients */
   --grad: linear-gradient(135deg, #8b5cf6, #06d6a0);       /* Purple → Teal */
-  --grad-warm: linear-gradient(135deg, #f59e0b, #ff4757);  /* Amber → Red */
+
   --grad-cool: linear-gradient(135deg, #06d6a0, #3b82f6);  /* Teal → Blue */
 
   /* Glow effects */
   --glow-purple: 0 0 40px rgba(139,92,246,0.15);
-  --glow-green: 0 0 40px rgba(6,214,160,0.12);
+
 
   /* Typography */
   --font-head: 'Syne', sans-serif;
@@ -565,10 +563,6 @@ body:not(:hover) .cursor, body:not(:hover) .cursor-trail { opacity: 0; }
   object-position: center;
   display: block;
 }
-.avatar-initials {
-  font-size: 3rem; font-weight: 800; letter-spacing: -2px;
-  background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-}
 .avatar-badge {
   position: absolute; bottom: -16px; left: 50%; transform: translateX(-50%);
   background: var(--accent); color: #fff;
@@ -687,23 +681,6 @@ body:not(:hover) .cursor, body:not(:hover) .cursor-trail { opacity: 0; }
   font-family: var(--font-mono);
   font-weight: 600;
 }
-.skill-bar {
-  flex: 1; height: 4px; background: var(--border);
-  border-radius: 4px; overflow: hidden;
-}
-.skill-fill {
-  height: 100%; width: 0;
-  background: var(--grad);
-  border-radius: 4px;
-  transition: width 1.4s cubic-bezier(0.4,0,0.2,1);
-}
-.skill-fill.animate { width: var(--w); }
-.skill-pct {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--text-dim);
-  min-width: 32px; text-align: right;
-}
 .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 .skill-tag {
   background: var(--surface);
@@ -720,92 +697,7 @@ body:not(:hover) .cursor, body:not(:hover) .cursor-trail { opacity: 0; }
   background: rgba(139,92,246,0.08);
 }
 
-/* ===== 12. JOURNEY / TIMELINE — Education & Experience ===== */
-.journey { background: var(--bg2); }
-.timeline { position: relative; padding-left: 52px; max-width: 720px; }
-.timeline::before {
-  content: '';
-  position: absolute; left: 15px; top: 0; bottom: 0;
-  width: 1px;
-  background: linear-gradient(180deg, var(--accent), var(--border), transparent);
-}
-.timeline-item { position: relative; margin-bottom: 52px; }
-.timeline-dot {
-  position: absolute; left: -46px; top: 6px;
-  width: 16px; height: 16px;
-  border-radius: 50%;
-  border: 2px solid var(--border);
-  background: var(--bg);
-  transition: var(--transition);
-}
-.timeline-dot.done {
-  border-color: var(--accent2);
-  background: var(--accent2);
-  box-shadow: 0 0 12px rgba(6,214,160,0.3);
-}
-.timeline-dot.active {
-  border-color: var(--accent);
-  background: var(--accent);
-  box-shadow: 0 0 0 5px rgba(139,92,246,0.2);
-  animation: dotPulse 1.5s ease infinite;
-}
-@keyframes dotPulse {
-  0%, 100% { box-shadow: 0 0 0 5px rgba(139,92,246,0.2); }
-  50% { box-shadow: 0 0 0 12px rgba(139,92,246,0.05); }
-}
-.timeline-dot.future { border-color: var(--border-bright); background: var(--bg2); }
-.timeline-content {
-  background: var(--bg3);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 26px;
-  transition: var(--transition);
-}
-.timeline-content:hover {
-  border-color: var(--accent);
-  box-shadow: var(--glow-purple);
-}
-.tl-year {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--accent);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  display: block; margin-bottom: 10px;
-}
-.timeline-content h3 {
-  font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: var(--text);
-}
-.timeline-content p {
-  color: var(--text-muted); font-size: 0.9rem; line-height: 1.85; margin-bottom: 14px;
-}
-.tl-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.tl-tags span {
-  background: rgba(139,92,246,0.08);
-  border: 1px solid rgba(139,92,246,0.2);
-  color: var(--accent);
-  font-size: 0.72rem;
-  font-weight: 600;
-  padding: 4px 12px; border-radius: 6px;
-  font-family: var(--font-mono);
-}
-.tl-badge {
-  background: var(--accent);
-  color: #fff;
-  font-size: 0.6rem;
-  font-weight: 700;
-  padding: 3px 10px; border-radius: 6px;
-  font-family: var(--font-mono);
-  vertical-align: middle;
-  margin-left: 8px;
-  animation: glowBadge 1.5s ease infinite;
-}
-@keyframes glowBadge {
-  0%,100% { box-shadow: 0 0 8px rgba(139,92,246,0.35); }
-  50% { box-shadow: 0 0 18px rgba(139,92,246,0.6); }
-}
-
-/* ===== 13. PROJECTS SECTION — Project Cards with Hover Overlay ===== */
+/* ===== 12. PROJECTS SECTION — Project Cards with Hover Overlay ===== */
 .projects { position: relative; }
 .projects-grid {
   display: grid;
@@ -899,7 +791,7 @@ body:not(:hover) .cursor, body:not(:hover) .cursor-trail { opacity: 0; }
 }
 .projects-cta { margin-top: 44px; text-align: center; }
 
-/* ===== 14. CERTIFICATIONS — Certificate Cards Grid ===== */
+/* ===== 13. CERTIFICATIONS — Certificate Cards Grid ===== */
 .certs { background: var(--bg2); position: relative; }
 .certs::before {
   content: '';
@@ -973,7 +865,7 @@ body:not(:hover) .cursor, body:not(:hover) .cursor-trail { opacity: 0; }
 .status-progress { background: rgba(245,158,11,0.1); color: var(--accent4); border: 1px solid rgba(245,158,11,0.25); }
 .status-planned { background: var(--surface); color: var(--text-dim); border: 1px solid var(--border); }
 
-/* ===== 15. CONTACT SECTION — Contact Form + Info Links ===== */
+/* ===== 14. CONTACT SECTION — Contact Form + Info Links ===== */
 .contact { position: relative; }
 .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 64px; align-items: start; }
 .contact-info h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 18px; letter-spacing: -0.5px; }
@@ -1062,7 +954,7 @@ body:not(:hover) .cursor, body:not(:hover) .cursor-trail { opacity: 0; }
   color: var(--accent3);
 }
 
-/* ===== 16. FOOTER — Site Footer with Navigation ===== */
+/* ===== 15. FOOTER — Site Footer with Navigation ===== */
 .footer {
   background: var(--bg2);
   border-top: 1px solid var(--border);
@@ -1113,7 +1005,7 @@ body:not(:hover) .cursor, body:not(:hover) .cursor-trail { opacity: 0; }
 }
 .back-top:hover { opacity: 0.7; text-decoration: underline; }
 
-/* ===== 17. WHATSAPP BUTTON — Fixed Floating Link ===== */
+/* ===== 16. WHATSAPP BUTTON — Fixed Floating Link ===== */
 .whatsapp-btn {
   position: fixed; bottom: 30px; right: 30px; z-index: 999;
   width: 54px; height: 54px;
@@ -1135,7 +1027,7 @@ body:not(:hover) .cursor, body:not(:hover) .cursor-trail { opacity: 0; }
   fill: #fff;
 }
 
-/* ===== 18. SVG ICON BASE — Shared Icon Sizing ===== */
+/* ===== 17. SVG ICON BASE — Shared Icon Sizing ===== */
 .skill-logo svg,
 .cat-icon svg,
 .cert-icon svg,
@@ -1169,22 +1061,14 @@ body:not(:hover) .cursor, body:not(:hover) .cursor-trail { opacity: 0; }
 .skill-logo svg.tech-html { color: #e34f26; }
 .skill-logo svg.tech-css { color: #1572b6; }
 .skill-logo svg.tech-js { color: #f7df1e; }
-.skill-logo svg.tech-mysql { color: #4479a1; }
 .skill-logo svg.tech-db { color: #47a248; }
 .skill-logo svg.tech-ds { color: #8b5cf6; }
 .skill-logo svg.tech-os { color: #06d6a0; }
 .skill-logo svg.tech-network { color: #3b82f6; }
-.skill-logo svg.tech-prompt { color: #f59e0b; }
 .skill-logo svg.tech-ai { color: #ff4757; }
-.skill-logo svg.tech-tools { color: #7c3aed; }
-.skill-logo svg.tech-vscode { color: #007acc; }
-.skill-logo svg.tech-git { color: #f05032; }
-.skill-logo svg.tech-github { color: #ededef; }
 .skill-logo svg.tech-nodejs { color: #68a063; }
 .skill-logo svg.tech-express { color: #888; }
 .skill-logo svg.tech-rest { color: #00d4aa; }
-.skill-logo svg.tech-dart { color: #0175c2; }
-.skill-logo svg.tech-flutter { color: #02569b; }
 .skill-logo svg.tech-openai { color: #10a37f; }
 .skill-logo svg.tech-gemini { color: #4285f4; }
 .skill-logo svg.tech-oop { color: #f472b6; }
@@ -1204,7 +1088,7 @@ body:not(:hover) .cursor, body:not(:hover) .cursor-trail { opacity: 0; }
 /* Contact icons */
 .cl-icon svg { color: var(--accent); }
 
-/* ===== 19. UNIQUE DESIGN — Decorative Accent Elements ===== */
+/* ===== 18. UNIQUE DESIGN — Decorative Accent Elements ===== */
 
 /* Asymmetric accent line on hero */
 .hero-content::after {
@@ -1338,13 +1222,7 @@ body:not(:hover) .cursor, body:not(:hover) .cursor-trail { opacity: 0; }
   border-radius: 50%;
 }
 
-/* Staggered animation for skill items */
-.skill-item:nth-child(1) { animation-delay: 0s; }
-.skill-item:nth-child(2) { animation-delay: 0.05s; }
-.skill-item:nth-child(3) { animation-delay: 0.1s; }
-.skill-item:nth-child(4) { animation-delay: 0.15s; }
-
-/* ===== 20. REVEAL ANIMATION — Scroll-triggered Fade-in ===== */
+/* ===== 19. REVEAL ANIMATION — Scroll-triggered Fade-in ===== */
 .reveal {
   opacity: 0;
   transform: translateY(35px);
@@ -1494,9 +1372,6 @@ body:not(:hover) .cursor, body:not(:hover) .cursor-trail { opacity: 0; }
   .phone-row { grid-template-columns: 1fr; gap: 10px; }
   .form-group input, .form-group textarea, .form-group select { font-size: 0.88rem; padding: 12px 16px; }
   .form-group label { font-size: 0.72rem; }
-  .timeline { padding-left: 32px; }
-  .timeline-dot { left: -30px; width: 14px; height: 14px; }
-  .timeline-content { padding: 20px; }
   .footer { padding: 44px 0 22px; }
   .footer-inner { flex-direction: column; gap: 22px; }
   .footer-logo { font-size: 1.15rem; }
@@ -1557,7 +1432,6 @@ body:not(:hover) .cursor, body:not(:hover) .cursor-trail { opacity: 0; }
   .skill-category { padding: 20px 16px; }
   .skill-cat-header h3 { font-size: 0.92rem; }
   .skill-name { min-width: 80px; font-size: 0.76rem; }
-  .skill-pct { font-size: 0.66rem; min-width: 28px; }
   .projects-grid { grid-template-columns: 1fr; gap: 12px; }
   .project-img { height: 148px; }
   .project-emoji { font-size: 2.8rem; }
@@ -1580,12 +1454,6 @@ body:not(:hover) .cursor, body:not(:hover) .cursor-trail { opacity: 0; }
   .form-group label { font-size: 0.68rem; }
   .contact-link { padding: 14px 16px; gap: 12px; }
   .cl-val { font-size: 0.82rem; }
-  .timeline { padding-left: 28px; }
-  .timeline::before { left: 12px; }
-  .timeline-dot { left: -26px; width: 13px; height: 13px; top: 7px; }
-  .timeline-content { padding: 18px 16px; }
-  .timeline-content h3 { font-size: 0.98rem; }
-  .timeline-content p { font-size: 0.82rem; }
   .footer { padding: 38px 0 18px; }
   .footer-inner { flex-direction: column; gap: 20px; }
   .footer-logo { font-size: 1.05rem; }
@@ -1607,7 +1475,7 @@ body:not(:hover) .cursor, body:not(:hover) .cursor-trail { opacity: 0; }
   .cursor, .cursor-trail { display: none !important; }
 }
 
-/* ===== 28. PAGE TRANSITION — Fade Overlay Between Pages ===== */
+/* ===== 27. PAGE TRANSITION — Fade Overlay Between Pages ===== */
 .page-transition {
   position: fixed;
   inset: 0;

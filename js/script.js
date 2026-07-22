@@ -8,11 +8,10 @@
    4. Navbar Scroll         — Glassmorphism navbar on scroll
    5. Mobile Hamburger      — Toggle menu for mobile devices
    6. Scroll Reveal         — Fade-in elements on scroll (IntersectionObserver)
-   7. Skill Bar Animation   — Animate skill bars when visible
-   8. Contact Form          — Validation + EmailJS integration
-   9. Active Nav Link       — Highlight current section in nav
-   10. Smooth Scroll        — Smooth scroll for anchor links
-   11. Page Transitions     — Fade overlay between page navigation
+   7. Contact Form          — Validation + EmailJS integration
+   8. Active Nav Link       — Highlight current section in nav
+   9. Smooth Scroll        — Smooth scroll for anchor links
+   10. Page Transitions     — Fade overlay between page navigation
    ============================================ */
 
 'use strict';
@@ -302,29 +301,7 @@
 })();
 
 /* ============================================
-   7. SKILL BAR ANIMATION
-   - Animated fill bars when skill section is visible
-   - Width set via CSS custom property --w
-   - Triggers once with 250ms delay
-   ============================================ */
-(function initSkillBars() {
-  const fills = document.querySelectorAll('.skill-fill');
-  if (!fills.length) return;
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('animate'), 250);
-        observer.unobserve(entry.target);  // Only animate once
-      }
-    });
-  }, { threshold: 0.3 });
-
-  fills.forEach(fill => observer.observe(fill));
-})();
-
-/* ============================================
-   8. CONTACT FORM — VALIDATION + EMAILJS
+   7. CONTACT FORM — VALIDATION + EMAILJS
    - Client-side validation for all fields
    - Email format: standard regex check
    - Mobile: 7-15 digits (spaces/dashes allowed)
@@ -506,7 +483,7 @@
 })();
 
 /* ============================================
-   9. ACTIVE NAV LINK ON SCROLL
+   8. ACTIVE NAV LINK ON SCROLL
    - Highlights the nav link corresponding to
      the currently visible section
    - Uses IntersectionObserver with center threshold
@@ -539,7 +516,7 @@
 })();
 
 /* ============================================
-   10. SMOOTH SCROLL FOR ANCHOR LINKS
+   9. SMOOTH SCROLL FOR ANCHOR LINKS
    - Intercepts #anchor clicks
    - Scrolls smoothly with 80px offset for fixed navbar
    ============================================ */
@@ -555,7 +532,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 /* ============================================
-   11. PAGE TRANSITIONS
+   10. PAGE TRANSITIONS
    - Full-screen overlay fades in on internal link click
    - New page fades in after 350ms transition
    - Skips external links, anchors, mailto/tel
